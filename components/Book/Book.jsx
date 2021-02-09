@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Item } from "./Book.style";
+import CartContext from "../../context/CartContext";
 
-export default function Book({ book, cartCost, setCartCost }) {
+export default function Book({ book }) {
   const { isbn, cover, title, synopsis, price } = book;
+  const { cartCost, setCartCost } = useContext(CartContext);
 
   const getPrice = () => {
-    //Ref
+    // Ref
+    // {isbn, price, title}
     setCartCost(cartCost + price);
     console.log(price);
   };

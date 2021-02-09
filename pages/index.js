@@ -2,6 +2,7 @@ import { getAllBooks } from "../services/book";
 import BookList from "../components/BookList/BookList";
 import { Inner } from "../styles/global";
 import { useState } from "react";
+import CartContext from "../context/CartContext";
 
 // const Title = styled.h1`
 //   font-size: 50px;
@@ -10,16 +11,19 @@ import { useState } from "react";
 
 export default function Home({ allBooks }) {
   const [cartCost, setCartCost] = useState(0);
+  const contextCartCost = { cartCost, setCartCost };
   console.log("cartCost", cartCost);
   return (
-    <Inner>
-      <h1>Henri Potier</h1>
-      <BookList
-        allBooks={allBooks}
-        cartCost={cartCost}
-        setCartCost={setCartCost}
-      />
-    </Inner>
+    <CartContext.Provider value={contextCartCost}>
+      <Inner>
+        <h1>Henri Potier</h1>
+        <BookList
+          allBooks={allBooks}
+          cartCost={cartCost}
+          setCartCost={setCartCost}
+        />
+      </Inner>
+    </CartContext.Provider>
   );
 }
 
