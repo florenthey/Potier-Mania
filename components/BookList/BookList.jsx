@@ -6,7 +6,7 @@ export default function BookList({ allBooks }) {
   return (
     <List>
       {allBooks.map((book) => (
-        <Book book={book} />
+        <Book key={book.isbn} book={book} />
       ))}
     </List>
   );

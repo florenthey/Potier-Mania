@@ -4,9 +4,9 @@ import CartContext from "../../context/CartContext";
 
 export default function Book({ book }) {
   const { isbn, cover, title, synopsis, price } = book;
-  const { cart, setCart } = useContext(CartContext);
+  const { setCart } = useContext(CartContext);
 
-  const getPrice = () => {
+  const addToCart = () => {
     setCart((prevState) => [
       ...prevState,
       { isbn: isbn, price: price, title: title },
@@ -20,7 +20,7 @@ export default function Book({ book }) {
       <h2>{title}</h2>
       <p>{synopsis[0]}</p>
       <p>{price} €</p>
-      <button type="button" onClick={getPrice}>
+      <button type="button" onClick={addToCart}>
         Acheter
       </button>
     </Item>

@@ -3,6 +3,7 @@ import BookList from "../components/BookList/BookList";
 import { Inner } from "../styles/global";
 import { useEffect, useState } from "react";
 import CartContext from "../context/CartContext";
+import { useQuery } from "react-query";
 
 // const Title = styled.h1`
 //   font-size: 50px;
@@ -12,12 +13,23 @@ import CartContext from "../context/CartContext";
 export default function Home({ allBooks }) {
   const [cart, setCart] = useState([]);
   const contextCart = { cart, setCart };
-  // retrieves all the isbn and transforms them into a string
+
+  // retrieves all the isbn available in cart and transforms them into a string
   const isbnGroup = cart.map((item) => item.isbn).toString();
 
-  useEffect(() => {
-    if (isbnGroup !== "") getOffers(isbnGroup);
-  }, [cart]);
+  // console.log("cart", cart);
+
+  const { data: offers, error } = useQuery(
+    [isbnGroup],
+    () => {
+      if (isbnGroup !== "") return getOffers(isbnGroup);
+    },
+    {
+      refetchOnWindowFocus: false,
+    }
+  );
+
+  console.log("offers", offers);
 
   return (
     <CartContext.Provider value={contextCart}>
