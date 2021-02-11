@@ -1,9 +1,11 @@
 import { getAllBooks, getOffers } from "../services/cart";
-import BookList from "../components/BookList/BookList";
+import BookList from "../components/bookList/BookList";
 import { Inner } from "../styles/global";
 import { useEffect, useState } from "react";
 import CartContext from "../context/CartContext";
 import { useQuery } from "react-query";
+import SearchBar from "../components/searchBar/SearchBar";
+import Cart from "../components/cart/Cart";
 
 // const Title = styled.h1`
 //   font-size: 50px;
@@ -29,13 +31,14 @@ export default function Home({ allBooks }) {
     }
   );
 
-  console.log("offers", offers);
+  // console.log("offers", offers);
 
   return (
     <CartContext.Provider value={contextCart}>
       <Inner>
-        <h1>Henri Potier</h1>
+        <SearchBar />
         <BookList allBooks={allBooks} />
+        <Cart cart={cart} />
       </Inner>
     </CartContext.Provider>
   );

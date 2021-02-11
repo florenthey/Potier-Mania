@@ -11,7 +11,7 @@ export default function Book({ book }) {
       ...prevState,
       { isbn: isbn, price: price, title: title },
     ]);
-    console.log(price);
+    // console.log(price);
   };
 
   return (

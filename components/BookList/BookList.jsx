@@ -1,5 +1,5 @@
 import React from "react";
-import Book from "../Book/Book";
+import Book from "../book/Book";
 import { List } from "./BookList.style";
 
 export default function BookList({ allBooks }) {
