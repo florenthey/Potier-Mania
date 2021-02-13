@@ -62,6 +62,7 @@ export default function Cart({ cart, offers }) {
         ) || 0;
       setAfterOffer(Math.min(byPercentage, byMinus, bySlice));
     };
+
     parseByOffer();
   }, [cartSum, offers]);
 

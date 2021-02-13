@@ -3,6 +3,7 @@ import BookList from "../components/bookList/BookList";
 import { Inner } from "../styles/global";
 import { useEffect, useState } from "react";
 import CartContext from "../context/CartContext";
+import SearchContext from "../context/SearchContext";
 import { useQuery } from "react-query";
 import SearchBar from "../components/searchBar/SearchBar";
 import Cart from "../components/cart/Cart";
@@ -14,7 +15,11 @@ import Cart from "../components/cart/Cart";
 
 export default function Home({ allBooks }) {
   const [cart, setCart] = useState([]);
+  const [userValue, setUserValue] = useState("");
+  const [filteredBook, setFilteredBook] = useState(allBooks);
+
   const contextCart = { cart, setCart };
+  const contextSearch = { userValue, setUserValue };
 
   // retrieves all the isbn available in cart and transforms them into a string
   const isbnGroup = cart.map((item) => item.isbn).toString();
@@ -31,15 +36,40 @@ export default function Home({ allBooks }) {
     }
   );
 
+  // console.log("allBooks", allBooks);
+
+  useEffect(() => {
+    const updateUserInput = () => {
+      const filtered = allBooks.filter((book) => {
+        return (
+          book.title.toLowerCase().includes(userValue.toLowerCase()) ||
+          book.isbn.toLowerCase().includes(userValue.toLowerCase()) ||
+          book.price
+            .toString()
+            .toLowerCase()
+            .includes(userValue.toLowerCase()) ||
+          book.synopsis.find((resum) =>
+            resum.toLowerCase().includes(userValue.toLowerCase())
+          )
+        );
+      });
+      setFilteredBook(filtered);
+    };
+    updateUserInput();
+  }, [allBooks, userValue]);
+
+  console.log("filteredBook", filteredBook);
   // console.log("offers", offers);
 
   return (
     <CartContext.Provider value={contextCart}>
-      <Inner>
-        <SearchBar />
-        <BookList allBooks={allBooks} />
-        <Cart cart={cart} offers={offers} />
-      </Inner>
+      <SearchContext.Provider value={contextSearch}>
+        <Inner>
+          <SearchBar userValue={userValue} />
+          <BookList allBooks={allBooks} filteredBook={filteredBook} />
+          <Cart cart={cart} offers={offers} />
+        </Inner>
+      </SearchContext.Provider>
     </CartContext.Provider>
   );
 }
