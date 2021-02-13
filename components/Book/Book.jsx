@@ -18,6 +18,7 @@ export default function Book({ book }) {
     <Item key={isbn}>
       <Image src={cover} />
       <h2>{title}</h2>
+      <p>ISBN: {isbn}</p>
       <p>{synopsis[0]}</p>
       <p>{price} €</p>
       <button type="button" onClick={addToCart}>

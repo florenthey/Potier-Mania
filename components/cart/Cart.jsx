@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { minus, percentage, slice } from "../../utils/offers";
 
-export default function Cart({ cart }) {
+export default function Cart({ cart, offers }) {
   const [filteredCart, setFilteredCart] = useState([]);
-
-  console.log("cart", cart);
+  const [cartSum, setCartSum] = useState(0);
+  const [afterOffer, setAfterOffer] = useState(0);
 
   useEffect(() => {
     const booksParser = () => {
@@ -36,19 +37,49 @@ export default function Cart({ cart }) {
     booksParser();
   }, [cart]);
 
-  console.log("filteredCart", filteredCart);
+  useEffect(() => {
+    const bookByOccurence = filteredCart.map(
+      (book) => book.count * book.item.price
+    );
+
+    if (bookByOccurence.length) {
+      const sum = bookByOccurence.reduce(
+        (prevBook, nextBook) => prevBook + nextBook
+      );
+      setCartSum(sum);
+    }
+  }, [filteredCart]);
+
+  useEffect(() => {
+    const parseByOffer = () => {
+      const byPercentage = percentage(cartSum, offers?.offers[0]?.value) || 0;
+      const byMinus = minus(cartSum, offers?.offers[1]?.value) || 0;
+      const bySlice =
+        slice(
+          cartSum,
+          offers?.offers[2]?.sliceValue,
+          offers?.offers[2]?.value
+        ) || 0;
+      setAfterOffer(Math.min(byPercentage, byMinus, bySlice));
+    };
+    parseByOffer();
+  }, [cartSum, offers]);
 
   return (
     <div>
-      {cart.map((book) => {
+      {filteredCart.map((book) => {
         return (
           <>
-            <p>{book.title}</p>
-            <p>{book.price}</p>
-            <p>X {}</p>
+            <p>
+              {book.item.title} x {book.count}
+            </p>
+            <p>{book.item.price * book.count} €</p>
           </>
         );
       })}
+      <p>
+        Total: {cartSum} {afterOffer} €
+      </p>
     </div>
   );
 }

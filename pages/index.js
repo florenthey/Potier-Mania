@@ -38,7 +38,7 @@ export default function Home({ allBooks }) {
       <Inner>
         <SearchBar />
         <BookList allBooks={allBooks} />
-        <Cart cart={cart} />
+        <Cart cart={cart} offers={offers} />
       </Inner>
     </CartContext.Provider>
   );
