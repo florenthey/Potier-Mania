@@ -1,8 +1,18 @@
 import React, { useContext } from "react";
-import { Item, Image } from "./Book.style";
 import CartContext from "../../context/CartContext";
+import styled from "styled-components";
+import {
+  Image,
+  Text,
+  Isbn,
+  Synopsis,
+  Price,
+  Span,
+  ButtonContainer,
+} from "./Book.style";
+import { H2, Button } from "../../styles/global";
 
-export default function Book({ book }) {
+const Book = ({ book, className }) => {
   const { isbn, cover, title, synopsis, price } = book;
   const { setCart } = useContext(CartContext);
 
@@ -11,19 +21,28 @@ export default function Book({ book }) {
       ...prevState,
       { isbn: isbn, price: price, title: title },
     ]);
-    // console.log(price);
   };
 
   return (
-    <Item key={isbn}>
-      <Image src={cover} />
-      <h2>{title}</h2>
-      <p>ISBN: {isbn}</p>
-      <p>{synopsis[0]}</p>
-      <p>{price} €</p>
-      <button type="button" onClick={addToCart}>
-        Acheter
-      </button>
-    </Item>
+    <li className={className} key={isbn}>
+      <Image>
+        <img src={cover} />
+        <Isbn>ISBN: {isbn}</Isbn>
+      </Image>
+      <Text>
+        <H2>{title}</H2>
+        <Synopsis>{synopsis[0]}</Synopsis>
+        <Price>
+          Prix: <Span>{price} €</Span>
+        </Price>
+        <ButtonContainer>
+          <Button type="button" onClick={addToCart}>
+            Acheter
+          </Button>
+        </ButtonContainer>
+      </Text>
+    </li>
   );
-}
+};
+
+export default styled(Book)``;

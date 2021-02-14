@@ -1,15 +1,9 @@
 import React, { useContext } from "react";
 import SearchContext from "../../context/SearchContext";
+import styled from "styled-components";
 
-const SearchBar = () => {
+const SearchBar = ({ className }) => {
   const { userValue, setUserValue } = useContext(SearchContext);
-
-  const BarStyling = {
-    width: "20rem",
-    background: "#F2F1F9",
-    border: "none",
-    padding: "0.5rem",
-  };
 
   const updateUserValue = (e) => {
     setUserValue(e.target.value);
@@ -17,7 +11,7 @@ const SearchBar = () => {
 
   return (
     <input
-      style={BarStyling}
+      className={className}
       key="bookSearch"
       value={userValue}
       placeholder={"Recherche d'un tome"}
@@ -26,4 +20,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default styled(SearchBar)``;

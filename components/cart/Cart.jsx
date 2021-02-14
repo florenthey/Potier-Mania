@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 import { minus, percentage, slice } from "../../utils/offers";
+import { Title, Span, Total, AfterOffer } from "./Cart.style";
 
-export default function Cart({ cart, offers }) {
+const Cart = ({ cart, offers, className }) => {
   const [filteredCart, setFilteredCart] = useState([]);
   const [cartSum, setCartSum] = useState(0);
   const [afterOffer, setAfterOffer] = useState(0);
@@ -67,20 +69,29 @@ export default function Cart({ cart, offers }) {
   }, [cartSum, offers]);
 
   return (
-    <div>
+    <div className={className}>
       {filteredCart.map((book) => {
         return (
           <>
-            <p>
-              {book.item.title} x {book.count}
-            </p>
-            <p>{book.item.price * book.count} €</p>
+            <Title>
+              • {book.item.title} <Span>x {book.count}</Span>
+            </Title>
+            {/* <p>{book.item.price * book.count} €</p> */}
           </>
         );
       })}
-      <p>
-        Total: {cartSum} {afterOffer} €
-      </p>
+      <Total>
+        Total:{" "}
+        {afterOffer === 0 ? (
+          <AfterOffer>{cartSum} €</AfterOffer>
+        ) : (
+          <>
+            <s>{cartSum}€</s> <AfterOffer>{afterOffer} €</AfterOffer>
+          </>
+        )}
+      </Total>
     </div>
   );
-}
+};
+
+export default styled(Cart)``;

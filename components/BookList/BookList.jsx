@@ -1,13 +1,30 @@
 import React from "react";
 import Book from "../book/Book";
-import { List } from "./BookList.style";
+import styled from "styled-components";
 
-export default function BookList({ filteredBook }) {
+const Volume = styled(Book)`
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  align-items: center;
+  text-align: center;
+  margin: 50px;
+
+  img {
+    width: 100%;
+    max-width: 342px;
+    max-height: 500px;
+  }
+`;
+
+const BookList = ({ filteredBook, className }) => {
   return (
-    <List>
+    <ul className={className}>
       {filteredBook.map((book) => (
-        <Book key={book.isbn} book={book} />
+        <Volume key={book.isbn} book={book} />
       ))}
-    </List>
+    </ul>
   );
-}
+};
+
+export default styled(BookList)``;
