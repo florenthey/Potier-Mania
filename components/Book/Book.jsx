@@ -9,9 +9,12 @@ import {
   Price,
   Span,
   ButtonContainer,
+  Card,
+  TextContainer,
 } from "./Book.style";
-import { H2 } from "../../styles/global";
+import { H3 } from "../../styles/global";
 import Button from "@material-ui/core/Button";
+import { yellow } from "@material-ui/core/colors";
 
 const Book = ({ book, className }) => {
   const { isbn, cover, title, synopsis, price } = book;
@@ -25,17 +28,19 @@ const Book = ({ book, className }) => {
   };
 
   return (
-    <li className={className} key={isbn}>
+    <Card className={className} key={isbn}>
       <Image>
         <img src={cover} />
         <Isbn>ISBN: {isbn}</Isbn>
       </Image>
       <Text>
-        <H2>{title}</H2>
-        <Synopsis>{synopsis[0]}</Synopsis>
-        <Price>
-          Prix: <Span>{price} €</Span>
-        </Price>
+        <H3>{title}</H3>
+        <TextContainer>
+          <Synopsis>{synopsis[0]}</Synopsis>
+          <Price>
+            Prix: <Span>{price} €</Span>
+          </Price>
+        </TextContainer>
         <ButtonContainer>
           <Button
             type="button"
@@ -47,7 +52,7 @@ const Book = ({ book, className }) => {
           </Button>
         </ButtonContainer>
       </Text>
-    </li>
+    </Card>
   );
 };
 

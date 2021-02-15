@@ -35,3 +35,16 @@ export const ButtonContainer = styled.div`
   flex-direction: column;
   align-items: center;
 `;
+
+export const Card = styled.div`
+  background: #d1d0d6;
+  padding: 25px;
+  border-radius: 5px;
+`;
+
+export const TextContainer = styled.div`
+  background-color: #ffffff;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 25px;
+`;

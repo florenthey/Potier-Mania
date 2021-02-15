@@ -1,6 +1,6 @@
 import { getAllBooks, getOffers } from "../services/cart";
 import BookList from "../components/bookList/BookList";
-import { Inner } from "../styles/global";
+import { H2, Inner } from "../styles/global";
 import { useEffect, useState } from "react";
 import CartContext from "../context/CartContext";
 import SearchContext from "../context/SearchContext";
@@ -8,9 +8,10 @@ import { useQuery } from "react-query";
 import SearchBar from "../components/searchBar/SearchBar";
 import Cart from "../components/cart/Cart";
 import styled from "styled-components";
-import { Container } from "./index.style";
+import { Container, SearchContainer } from "./index.style";
 import { H1 } from "../styles/global";
 import Head from "next/head";
+import Search from "../components/icons/Search";
 
 const SearchBook = styled(SearchBar)`
   width: 100%;
@@ -105,7 +106,10 @@ export default function Home({ allBooks }) {
         <Inner>
           <Container>
             <H1>Potier-Mania</H1>
-            <SearchBook userValue={userValue} />
+            <SearchContainer>
+              <Search />
+              <SearchBook userValue={userValue} />
+            </SearchContainer>
             <Books allBooks={allBooks} filteredBook={filteredBook} />
             {!!cart.length && <BooksCart cart={cart} offers={offers} />}
           </Container>

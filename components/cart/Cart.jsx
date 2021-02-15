@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { minus, percentage, slice } from "../../utils/offers";
 import { Title, Span, Total, AfterOffer } from "./Cart.style";
+import Bolt from "../icons/Bolt";
+import { H2 } from "../../styles/global";
 
 const Cart = ({ cart, offers, className }) => {
   const [filteredCart, setFilteredCart] = useState([]);
@@ -70,11 +72,12 @@ const Cart = ({ cart, offers, className }) => {
 
   return (
     <div className={className}>
+      <H2>Mon panier:</H2>
       {filteredCart.map((book) => {
         return (
           <>
             <Title>
-              • {book.item.title} <Span>x {book.count}</Span>
+              <Bolt /> {book.item.title} <Span>x {book.count}</Span>
             </Title>
             {/* <p>{book.item.price * book.count} €</p> */}
           </>
