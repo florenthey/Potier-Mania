@@ -15,12 +15,3 @@ export const H2 = styled.h2`
   padding: 0;
   color: #2c3874;
 `;
-
-export const Button = styled.button`
-  min-width: 150px;
-  min-height: 50px;
-  max-width: 150px;
-  font-size: 1.3rem;
-  color: rebeccapurple;
-  border-radius: 5px;
-`;

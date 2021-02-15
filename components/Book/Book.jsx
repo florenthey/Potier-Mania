@@ -10,7 +10,8 @@ import {
   Span,
   ButtonContainer,
 } from "./Book.style";
-import { H2, Button } from "../../styles/global";
+import { H2 } from "../../styles/global";
+import Button from "@material-ui/core/Button";
 
 const Book = ({ book, className }) => {
   const { isbn, cover, title, synopsis, price } = book;
@@ -36,7 +37,12 @@ const Book = ({ book, className }) => {
           Prix: <Span>{price} €</Span>
         </Price>
         <ButtonContainer>
-          <Button type="button" onClick={addToCart}>
+          <Button
+            type="button"
+            onClick={addToCart}
+            variant="contained"
+            size="large"
+          >
             Acheter
           </Button>
         </ButtonContainer>
