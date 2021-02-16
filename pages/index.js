@@ -44,11 +44,8 @@ export default function Home({ allBooks }) {
 
   const contextCart = { cart, setCart };
   const contextSearch = { userValue, setUserValue };
-
   // retrieves all the isbn available in cart and transforms them into a string
   const isbnGroup = cart.map((item) => item.isbn).toString();
-
-  // console.log("cart", cart);
 
   const { data: offers, error } = useQuery(
     [isbnGroup],
@@ -59,8 +56,6 @@ export default function Home({ allBooks }) {
       refetchOnWindowFocus: false,
     }
   );
-
-  // console.log("allBooks", allBooks);
 
   useEffect(() => {
     const updateUserInput = () => {
@@ -82,8 +77,6 @@ export default function Home({ allBooks }) {
     updateUserInput();
   }, [allBooks, userValue]);
 
-  console.log("filteredBook", filteredBook);
-  // console.log("offers", offers);
   return (
     <CartContext.Provider value={contextCart}>
       <SearchContext.Provider value={contextSearch}>
@@ -110,7 +103,7 @@ export default function Home({ allBooks }) {
               <Search />
               <SearchBook userValue={userValue} />
             </SearchContainer>
-            <Books allBooks={allBooks} filteredBook={filteredBook} />
+            <Books filteredBook={filteredBook} />
             {!!cart.length && <BooksCart cart={cart} offers={offers} />}
           </Container>
         </Inner>

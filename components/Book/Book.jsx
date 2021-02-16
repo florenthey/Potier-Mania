@@ -28,7 +28,7 @@ const Book = ({ book, className }) => {
   };
 
   return (
-    <Card className={className} key={isbn}>
+    <Card data-testid="volume" className={className} key={isbn}>
       <Image>
         <img src={cover} />
         <Isbn>ISBN: {isbn}</Isbn>
