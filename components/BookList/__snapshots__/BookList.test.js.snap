@@ -1,0 +1,334 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render the should render correctly in "debug" mode 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <ul
+        class="BookList-sc-14mrp6h-1"
+        data-testid="list-volume"
+      >
+        <div
+          class="Bookstyle__Card-shegoj-7 XUqZl Book-sc-16peyzc-0 BookList__Volume-sc-14mrp6h-0  cSsUDz"
+          data-testid="volume"
+        >
+          <div
+            class="Bookstyle__Image-shegoj-0"
+          >
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/henri-potier.appspot.com/o/hp5.jpg?alt=media"
+            />
+            <p
+              class="Bookstyle__Isbn-shegoj-2 iNbIff"
+            >
+              ISBN: 
+              cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6
+            </p>
+          </div>
+          <div
+            class="Bookstyle__Text-shegoj-1 iKLWJQ"
+          >
+            <h3
+              class="global__H3-cv0etw-3 bOPyoT"
+            >
+              Henri Potier et le Prince de sang-mêlé
+            </h3>
+            <div
+              class="Bookstyle__TextContainer-shegoj-8 hdlsXa"
+            >
+              <p
+                class="Bookstyle__Synopsis-shegoj-3 jHWdZW"
+              >
+                Henri rentre en sixième année à l'école de sorcellerie Poudlard. Il entre alors en possession d'un livre de potion portant le mot « propriété du Prince de sang-mêlé » et commence à en savoir plus sur le sombre passé de Voldemort qui était encore connu sous le nom de Tom Jedusor.
+              </p>
+              <p
+                class="Bookstyle__Price-shegoj-4 jyhIBp"
+              >
+                Prix: 
+                <p
+                  class="Bookstyle__Span-shegoj-5 hOMIKH"
+                >
+                  30
+                   €
+                </p>
+              </p>
+            </div>
+            <div
+              class="Bookstyle__ButtonContainer-shegoj-6 cRWKzA"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeLarge MuiButton-sizeLarge"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Acheter
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Bookstyle__Card-shegoj-7 XUqZl Book-sc-16peyzc-0 BookList__Volume-sc-14mrp6h-0  cSsUDz"
+          data-testid="volume"
+        >
+          <div
+            class="Bookstyle__Image-shegoj-0"
+          >
+            <img
+              src="https://firebasestorage.googleapis.com/v0/b/henri-potier.appspot.com/o/hp6.jpg?alt=media"
+            />
+            <p
+              class="Bookstyle__Isbn-shegoj-2 iNbIff"
+            >
+              ISBN: 
+              bbcee412-be64-4a0c-bf1e-315977acd924
+            </p>
+          </div>
+          <div
+            class="Bookstyle__Text-shegoj-1 iKLWJQ"
+          >
+            <h3
+              class="global__H3-cv0etw-3 bOPyoT"
+            >
+              Henri Potier et les Reliques de la Mort
+            </h3>
+            <div
+              class="Bookstyle__TextContainer-shegoj-8 hdlsXa"
+            >
+              <p
+                class="Bookstyle__Synopsis-shegoj-3 jHWdZW"
+              >
+                Cette année, Henri a 17 ans et ne retourne pas à l'école de Poudlard après la mort de Dumbledore. Avec Ron et Hermione il se consacre à la dernière mission confiée par Dumbledore. Le Seigneur des Ténèbres règne en maître et traque les fidèles amis qui sont réduit à la clandestinité. D'épreuves en révélations, le courage, les choix et les sacrifices de Henri seront déterminants dans la lutte contre les forces du Mal.
+              </p>
+              <p
+                class="Bookstyle__Price-shegoj-4 jyhIBp"
+              >
+                Prix: 
+                <p
+                  class="Bookstyle__Span-shegoj-5 hOMIKH"
+                >
+                  35
+                   €
+                </p>
+              </p>
+            </div>
+            <div
+              class="Bookstyle__ButtonContainer-shegoj-6 cRWKzA"
+            >
+              <button
+                class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeLarge MuiButton-sizeLarge"
+                tabindex="0"
+                type="button"
+              >
+                <span
+                  class="MuiButton-label"
+                >
+                  Acheter
+                </span>
+                <span
+                  class="MuiTouchRipple-root"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </body>,
+  "container": <div>
+    <ul
+      class="BookList-sc-14mrp6h-1"
+      data-testid="list-volume"
+    >
+      <div
+        class="Bookstyle__Card-shegoj-7 XUqZl Book-sc-16peyzc-0 BookList__Volume-sc-14mrp6h-0  cSsUDz"
+        data-testid="volume"
+      >
+        <div
+          class="Bookstyle__Image-shegoj-0"
+        >
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/henri-potier.appspot.com/o/hp5.jpg?alt=media"
+          />
+          <p
+            class="Bookstyle__Isbn-shegoj-2 iNbIff"
+          >
+            ISBN: 
+            cef179f2-7cbc-41d6-94ca-ecd23d9f7fd6
+          </p>
+        </div>
+        <div
+          class="Bookstyle__Text-shegoj-1 iKLWJQ"
+        >
+          <h3
+            class="global__H3-cv0etw-3 bOPyoT"
+          >
+            Henri Potier et le Prince de sang-mêlé
+          </h3>
+          <div
+            class="Bookstyle__TextContainer-shegoj-8 hdlsXa"
+          >
+            <p
+              class="Bookstyle__Synopsis-shegoj-3 jHWdZW"
+            >
+              Henri rentre en sixième année à l'école de sorcellerie Poudlard. Il entre alors en possession d'un livre de potion portant le mot « propriété du Prince de sang-mêlé » et commence à en savoir plus sur le sombre passé de Voldemort qui était encore connu sous le nom de Tom Jedusor.
+            </p>
+            <p
+              class="Bookstyle__Price-shegoj-4 jyhIBp"
+            >
+              Prix: 
+              <p
+                class="Bookstyle__Span-shegoj-5 hOMIKH"
+              >
+                30
+                 €
+              </p>
+            </p>
+          </div>
+          <div
+            class="Bookstyle__ButtonContainer-shegoj-6 cRWKzA"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeLarge MuiButton-sizeLarge"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Acheter
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Bookstyle__Card-shegoj-7 XUqZl Book-sc-16peyzc-0 BookList__Volume-sc-14mrp6h-0  cSsUDz"
+        data-testid="volume"
+      >
+        <div
+          class="Bookstyle__Image-shegoj-0"
+        >
+          <img
+            src="https://firebasestorage.googleapis.com/v0/b/henri-potier.appspot.com/o/hp6.jpg?alt=media"
+          />
+          <p
+            class="Bookstyle__Isbn-shegoj-2 iNbIff"
+          >
+            ISBN: 
+            bbcee412-be64-4a0c-bf1e-315977acd924
+          </p>
+        </div>
+        <div
+          class="Bookstyle__Text-shegoj-1 iKLWJQ"
+        >
+          <h3
+            class="global__H3-cv0etw-3 bOPyoT"
+          >
+            Henri Potier et les Reliques de la Mort
+          </h3>
+          <div
+            class="Bookstyle__TextContainer-shegoj-8 hdlsXa"
+          >
+            <p
+              class="Bookstyle__Synopsis-shegoj-3 jHWdZW"
+            >
+              Cette année, Henri a 17 ans et ne retourne pas à l'école de Poudlard après la mort de Dumbledore. Avec Ron et Hermione il se consacre à la dernière mission confiée par Dumbledore. Le Seigneur des Ténèbres règne en maître et traque les fidèles amis qui sont réduit à la clandestinité. D'épreuves en révélations, le courage, les choix et les sacrifices de Henri seront déterminants dans la lutte contre les forces du Mal.
+            </p>
+            <p
+              class="Bookstyle__Price-shegoj-4 jyhIBp"
+            >
+              Prix: 
+              <p
+                class="Bookstyle__Span-shegoj-5 hOMIKH"
+              >
+                35
+                 €
+              </p>
+            </p>
+          </div>
+          <div
+            class="Bookstyle__ButtonContainer-shegoj-6 cRWKzA"
+          >
+            <button
+              class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeLarge MuiButton-sizeLarge"
+              tabindex="0"
+              type="button"
+            >
+              <span
+                class="MuiButton-label"
+              >
+                Acheter
+              </span>
+              <span
+                class="MuiTouchRipple-root"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
