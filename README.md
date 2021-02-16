@@ -18,7 +18,7 @@ Start the project localy:
 npm run dev
 ```
 
-Start test:
+Start tests:
 
 ```
 npm run test
